@@ -1,0 +1,43 @@
+import { Github, Menu } from "lucide-react";
+import { navItems, profile } from "../data/portfolio";
+import { ActionLink } from "./ActionLink";
+
+export function Header() {
+  return (
+    <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/92 backdrop-blur">
+      <a className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:shadow-soft" href="#home">
+        Skip to main content
+      </a>
+      <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-4 sm:px-6 lg:flex-row lg:items-center lg:justify-between">
+        <div className="flex items-center justify-between gap-4">
+          <a className="group flex items-center gap-3 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" href="#home">
+            <span className="flex h-10 w-10 items-center justify-center rounded-md bg-primary text-sm font-semibold text-primary-foreground">
+              S
+            </span>
+            <span>
+              <span className="block text-sm font-semibold text-slate-950">{profile.name}</span>
+              <span className="block text-xs text-muted-foreground">{profile.role}</span>
+            </span>
+          </a>
+          <Menu className="h-5 w-5 text-muted-foreground lg:hidden" aria-hidden="true" />
+        </div>
+
+        <nav aria-label="Primary navigation" className="flex items-center gap-2 overflow-x-auto pb-1 lg:pb-0">
+          {navItems.map((item) => (
+            <a
+              className="whitespace-nowrap rounded-md px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-secondary hover:text-slate-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              href={item.href}
+              key={item.href}
+            >
+              {item.label}
+            </a>
+          ))}
+          <ActionLink external href={profile.githubUrl} variant="secondary" className="ml-1 shrink-0">
+            <Github className="h-4 w-4" aria-hidden="true" />
+            GitHub
+          </ActionLink>
+        </nav>
+      </div>
+    </header>
+  );
+}

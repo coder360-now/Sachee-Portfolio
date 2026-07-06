@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.npm-cache/
+.dev-server*.log
+*.tsbuildinfo
+.tsbuild/
+.DS_Store
+src/assets/hero-product-workspace.png
+.repo.git/
