@@ -10,8 +10,8 @@ export function CaseStudies() {
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
         <SectionHeading
           eyebrow="Case studies"
-          title="Editable product stories for recruiter and leadership conversations."
-          description="These are generic placeholders with no confidential company data. They are structured so you can later add real metrics, context, and artifacts."
+          title="Product stories for recruiter and leadership conversations."
+          description="Public-safe case studies built around the decisions, cross-functional work, evidence, and outcomes that shaped the product."
         />
 
         <div className="mt-10 grid gap-6">
@@ -22,7 +22,7 @@ export function CaseStudies() {
                   <div>
                     <div className="mb-3 flex items-center gap-2">
                       <BookOpen className="h-5 w-5 text-teal-600" aria-hidden="true" />
-                      <span className="text-sm font-medium text-teal-700">Placeholder case study</span>
+                      <span className="text-sm font-medium text-teal-700">Portfolio case study</span>
                     </div>
                     <CardTitle className="text-xl">{study.title}</CardTitle>
                     <p className="mt-3 max-w-4xl text-sm leading-6 text-slate-600">{study.theme}</p>

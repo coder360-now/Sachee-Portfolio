@@ -1,11 +1,11 @@
-import { Github, Menu } from "lucide-react";
+import { Github } from "lucide-react";
 import { navItems, profile } from "../data/portfolio";
 import { ActionLink } from "./ActionLink";
 
 export function Header() {
   return (
     <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/92 backdrop-blur">
-      <a className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:shadow-soft" href="#home">
+      <a className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:shadow-soft" href="#main-content">
         Skip to main content
       </a>
       <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-4 sm:px-6 lg:flex-row lg:items-center lg:justify-between">
@@ -19,7 +19,6 @@ export function Header() {
               <span className="block text-xs text-muted-foreground">{profile.role}</span>
             </span>
           </a>
-          <Menu className="h-5 w-5 text-muted-foreground lg:hidden" aria-hidden="true" />
         </div>
 
         <nav aria-label="Primary navigation" className="flex items-center gap-2 overflow-x-auto pb-1 lg:pb-0">

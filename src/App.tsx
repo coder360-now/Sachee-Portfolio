@@ -13,7 +13,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />
-      <main>
+      <main id="main-content">
         <Home />
         <About />
         <Leadership />

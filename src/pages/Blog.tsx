@@ -15,8 +15,8 @@ export function Blog() {
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
         <SectionHeading
           eyebrow="Product blog"
-          title="Starter posts for practical PM thinking."
-          description="The blog content lives in a local data file so titles, tags, dates, summaries, and article placeholders are easy to edit."
+          title="Notes on practical PM work."
+          description="Short field notes on enterprise product decisions, AI-assisted workflows, customer operations, and launch discipline."
         />
 
         <div className="mt-10 grid gap-6 lg:grid-cols-[0.92fr_1.08fr]">
@@ -40,7 +40,7 @@ export function Blog() {
                     ))}
                   </div>
                   <Button className="mt-5" onClick={() => setActiveSlug(post.slug)} variant="secondary">
-                    Read placeholder
+                    Read article
                   </Button>
                 </CardContent>
               </Card>
@@ -48,7 +48,7 @@ export function Blog() {
           </div>
 
           <article className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
-            <Badge tone="success">Article placeholder</Badge>
+            <Badge tone="success">Product note</Badge>
             <h3 className="mt-4 text-2xl font-semibold leading-tight text-slate-950">{activePost.title}</h3>
             <p className="mt-3 text-sm text-slate-500">{activePost.date} / {activePost.readingTime}</p>
             <div className="mt-5 flex flex-wrap gap-2">

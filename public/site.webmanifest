@@ -1,0 +1,9 @@
+{
+  "name": "Sachee Choubey Product Portfolio",
+  "short_name": "Sachee Portfolio",
+  "description": "Enterprise product leadership, case studies, practical PM writing, and interactive React demos.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#12203b"
+}

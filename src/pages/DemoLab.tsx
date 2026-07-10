@@ -58,7 +58,16 @@ function PrdHealthChecker() {
           <CardTitle>Paste PRD text</CardTitle>
         </CardHeader>
         <CardContent>
-          <Textarea value={text} onChange={(event) => setText(event.target.value)} aria-label="PRD text" />
+          <Textarea
+            value={text}
+            onChange={(event) => setText(event.target.value)}
+            aria-describedby="prd-input-limit"
+            aria-label="PRD text"
+            maxLength={12000}
+          />
+          <p className="mt-2 text-right text-xs text-slate-500" id="prd-input-limit">
+            {text.length.toLocaleString()} / 12,000 characters. Text stays in this browser.
+          </p>
           <div className="mt-4 flex flex-wrap gap-3">
             <Button onClick={() => setReport(buildPrdReport(text))}>Analyze</Button>
             <Button variant="secondary" onClick={() => setText(samplePrd)}>
@@ -218,9 +227,9 @@ function LaunchReadinessChecklist() {
           </div>
         </CardHeader>
         <CardContent>
-          <div className="h-3 overflow-hidden rounded-full bg-slate-100" aria-label={`Launch readiness progress ${progress}%`}>
-            <div className="h-full rounded-full bg-teal-600 transition-all" style={{ width: `${progress}%` }} />
-          </div>
+          <progress className="readiness-progress h-3 w-full overflow-hidden rounded-full" max={100} value={progress}>
+            {progress}%
+          </progress>
         </CardContent>
       </Card>
 
@@ -345,12 +354,15 @@ function RoadmapPrioritization() {
   const ranked = useMemo(() => [...features].sort((a, b) => riceScore(b) - riceScore(a)), [features]);
 
   const updateFeature = (id: string, key: keyof Omit<FeatureScore, "id" | "name">, value: number) => {
+    const limits = { reach: 1000000, impact: 5, confidence: 100, effort: 1000 } as const;
+    const fallback = key === "effort" ? 0.5 : 0;
+    const safeValue = Number.isFinite(value) ? value : fallback;
     setFeatures((current) =>
       current.map((feature) =>
         feature.id === id
           ? {
               ...feature,
-              [key]: Math.max(key === "effort" ? 0.5 : 0, value),
+              [key]: Math.min(limits[key], Math.max(fallback, safeValue)),
             }
           : feature,
       ),
@@ -387,6 +399,7 @@ function RoadmapPrioritization() {
                           aria-label={`${feature.name} ${key}`}
                           className="h-10 w-24 rounded-md border border-input px-3 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                           min={key === "effort" ? 0.5 : 0}
+                          max={key === "reach" ? 1000000 : key === "effort" ? 1000 : key === "confidence" ? 100 : 5}
                           onChange={(event) => updateFeature(feature.id, key, Number(event.target.value))}
                           step={key === "effort" ? 0.5 : 1}
                           type="number"
@@ -458,7 +471,12 @@ export function DemoLab() {
                 <CardContent>
                   <p className="text-sm leading-6 text-slate-600">{demo.description}</p>
                   <p className="mt-3 text-sm font-medium text-slate-800">PM problem: {demo.problem}</p>
-                  <Button className="mt-5 w-full" onClick={() => setActiveDemo(demo.id)} variant={isActive ? "default" : "secondary"}>
+                  <Button
+                    aria-pressed={isActive}
+                    className="mt-5 w-full"
+                    onClick={() => setActiveDemo(demo.id)}
+                    variant={isActive ? "default" : "secondary"}
+                  >
                     Open Demo
                   </Button>
                 </CardContent>

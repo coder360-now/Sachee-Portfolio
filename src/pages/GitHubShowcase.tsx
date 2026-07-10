@@ -29,12 +29,14 @@ export function GitHubShowcase() {
                 <CardHeader>
                   <div className="flex items-start justify-between gap-3">
                     <CardTitle className="text-white">{repo.name}</CardTitle>
-                    <Badge tone={repo.status === "planned" ? "neutral" : "medium"}>{repo.status}</Badge>
+                    <Badge tone={repo.status === "live" ? "success" : repo.status === "planned" ? "neutral" : "medium"}>{repo.status}</Badge>
                   </div>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm leading-6 text-slate-300">{repo.description}</p>
-                  <p className="mt-4 text-xs uppercase tracking-normal text-slate-400">Repository not assumed to exist yet</p>
+                  <p className="mt-4 text-xs uppercase tracking-normal text-slate-400">
+                    {repo.status === "live" ? "Available in this GitHub portfolio" : "Standalone repository planned"}
+                  </p>
                 </CardContent>
               </Card>
             ))}

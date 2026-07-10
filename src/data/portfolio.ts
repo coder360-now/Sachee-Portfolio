@@ -41,7 +41,7 @@ export type BlogPost = {
 export type PlannedRepo = {
   name: string;
   description: string;
-  status: "planned" | "coming soon";
+  status: "live" | "planned" | "coming soon";
 };
 
 export type Metric = {
@@ -320,66 +320,73 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "small-ai-experiments",
     title: "Why PMs Should Build Small AI Experiments, Not Just Read About AI",
-    date: "Draft",
+    date: "July 2026",
     summary:
       "A practical argument drawn from my own PM workflow experiments: AI is most useful when it improves judgment, not when it replaces it.",
     tags: ["AI", "Product craft", "Prototyping"],
-    readingTime: "5 min placeholder",
+    readingTime: "4 min read",
     content: [
-      "Draft note: I use AI for PRD drafting, research synthesis, Jira workflow automation, Confluence documentation, API exploration, and prototype creation.",
-      "The article should show small experiments such as contradiction detection, launch checklists, support-signal clustering, and PRD review helpers.",
+      "Reading about AI can expand a PM's vocabulary, but building a small experiment reveals the product questions that theory skips: What input is trustworthy? What should the user be able to challenge? Where does judgment need to stay human?",
+      "I use AI-assisted workflows for early PRD drafts, research synthesis, Jira and Confluence hygiene, API exploration, and prototype creation. The useful pattern is narrow and reviewable: let the tool compress repetitive work, then require a PM to validate the evidence and make the decision.",
+      "A contradiction checker, launch checklist, support-signal grouper, or PRD review helper can be valuable without pretending to be autonomous. Small prototypes make assumptions visible, invite better feedback, and help teams decide where more investment is actually justified.",
     ],
   },
   {
     slug: "enterprise-pms-contact-center",
     title: "What Enterprise PMs Can Learn From Contact Center Workflows",
-    date: "Draft",
+    date: "July 2026",
     summary:
       "Contact center products expose enterprise realities: queueing, compliance, supervision, reporting, adoption, and operational resilience.",
     tags: ["Enterprise SaaS", "CX", "Operations"],
-    readingTime: "6 min placeholder",
+    readingTime: "4 min read",
     content: [
-      "Draft note: Contact center products force PMs to think about roles, permissions, escalations, reporting, support paths, and failure handling.",
-      "Use public-safe examples such as campaign setup, contact lists, dialing modes, compliance boundaries, and launch readiness.",
+      "Contact center workflows are a compact lesson in enterprise product management. Every seemingly simple flow touches roles, permissions, queues, reporting, escalation paths, operational resilience, and the reality of how teams work under pressure.",
+      "Outbound campaign setup is a good example. A PM has to consider who can create and approve a campaign, how contact lists are managed, which dialing modes are supported, what happens when an import fails, and how compliance boundaries are explained without ambiguity.",
+      "The broader lesson is to design the operating system around the feature. Adoption depends on administration, support, measurement, and recovery paths just as much as it depends on the happy-path interaction.",
     ],
   },
   {
     slug: "zero-to-one-framework",
     title: "My Practical Framework for Taking a Product From 0 to 1",
-    date: "Draft",
+    date: "July 2026",
     summary:
       "A grounded 0 to 1 framework covering problem clarity, risk, prototype scope, decision logs, and early adoption signals.",
     tags: ["0 to 1", "Frameworks", "Product strategy"],
-    readingTime: "7 min placeholder",
+    readingTime: "5 min read",
     content: [
-      "Draft note: Anchor this in the Native Webex Campaign Manager path from idea in Sep 2024 to GA in Jun 2025.",
-      "Cover customer interviews, narrowing launch scope, defending shared contact lists, compliance choices, and adoption signals.",
+      "My practical 0 to 1 sequence starts with a clear workflow problem, not a feature list. I look for repeated customer evidence, identify the roles involved, name the risks and constraints, and write down what the first release will deliberately not solve.",
+      "Discovery should change the plan. In the Native Webex Campaign Manager journey, customer interviews helped narrow the first scenarios to sales and collections. That focus created a clearer basis for scope, compliance decisions, launch messaging, and adoption measurement.",
+      "The middle of 0 to 1 is a series of visible tradeoffs: which capabilities are required at GA, which can follow, and which admin workflows are essential for the people who will actually operate the product. Decision logs keep those choices connected to evidence.",
+      "After launch, the work shifts from shipping to learning. Paid subscriptions, active usage, support signals, and workflow friction are early evidence—not a victory lap. They tell the team where the product needs to become more reliable, explainable, and useful.",
     ],
   },
   {
     slug: "ai-copilot-judgment",
     title: "Using AI as a PM Co-Pilot Without Losing Product Judgment",
-    date: "Draft",
+    date: "July 2026",
     summary:
       "Where AI can help PMs draft, synthesize, and explore options, and where human product judgment must stay in control.",
     tags: ["AI workflows", "PM execution", "Judgment"],
-    readingTime: "5 min placeholder",
+    readingTime: "4 min read",
     content: [
-      "Draft note: Separate AI-assisted speed from actual decision quality.",
-      "Add examples of review checkpoints, source grounding, product accountability, and places where PMs should slow down.",
+      "AI can improve the speed of drafting, synthesis, and option generation. It cannot own the consequences of a roadmap decision, interpret a customer's unstated context, or decide which risk a business should accept.",
+      "I use a simple boundary: AI may propose structure, surface patterns, and challenge completeness; a PM must verify sources, resolve contradictions, and own the final decision. Important outputs need traceable evidence and an explicit review checkpoint.",
+      "The moments to slow down are predictable: compliance interpretation, customer commitments, metrics that will shape investment, and any recommendation that affects trust. A co-pilot is useful when it makes judgment easier to exercise—not easier to avoid.",
     ],
   },
   {
     slug: "enterprise-launch-readiness",
     title: "How I Think About Launch Readiness in Enterprise SaaS",
-    date: "Draft",
+    date: "July 2026",
     summary:
       "A launch-readiness view that includes product quality, GTM alignment, support readiness, analytics, docs, and operational risk.",
     tags: ["Launch readiness", "Enterprise SaaS", "GTM"],
-    readingTime: "6 min placeholder",
+    readingTime: "5 min read",
     content: [
-      "Draft note: Treat launch readiness as product management work, not a final checklist exercise.",
-      "Cover GA criteria, docs, support playbooks, GTM enablement, compliance, accessibility, analytics, and adoption reviews.",
+      "Launch readiness is product management work from the beginning, not a checklist added after engineering declares a feature complete. The launch plan should connect product quality, operational support, market clarity, and measurable adoption.",
+      "I organize readiness across product scope, engineering reliability, documentation, support, GTM enablement, compliance, accessibility, and analytics. Each area needs an owner, evidence, and a clear threshold for beta or GA—not a green status based on optimism.",
+      "Known limitations should be easy for sales, support, and customers to understand. Escalation paths, rollback thinking, event instrumentation, and a date for the first adoption review are part of the product experience even when users never see them.",
+      "The goal is not to eliminate every risk. It is to make the remaining risks visible, owned, and proportionate to the promises being made at launch.",
     ],
   },
 ];
@@ -388,7 +395,7 @@ export const plannedRepos: PlannedRepo[] = [
   {
     name: "sachee-product-portfolio",
     description: "This portfolio site: resume-backed product story, React demo lab, and public PM writing system.",
-    status: "planned",
+    status: "live",
   },
   {
     name: "prd-health-checker",

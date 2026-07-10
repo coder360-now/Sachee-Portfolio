@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://coder-360now.github.io/sachee-product-portfolio/sitemap.xml

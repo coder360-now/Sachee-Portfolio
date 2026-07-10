@@ -4,7 +4,7 @@ import { profile } from "../data/portfolio";
 const links = [
   { label: "GitHub", href: profile.githubUrl, icon: Github },
   { label: "LinkedIn", href: profile.linkedInUrl, icon: Linkedin },
-  { label: "Email placeholder", href: profile.emailUrl, icon: Mail },
+  { label: "Email", href: profile.emailUrl, icon: Mail },
 ];
 
 export function Footer() {

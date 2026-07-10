@@ -1,6 +1,6 @@
 # Sachee Choubey Product Portfolio
 
-A public, recruiter-friendly personal portfolio for Sachee Choubey, a Senior Product Manager / Engineering Product Manager. The site is built from resume-backed evidence across Cisco, Eka Software, Wibmo, and MetricStream, with product leadership stories, practical AI-assisted PM workflows, React demos, starter blog posts, and a GitHub project showcase.
+A public, recruiter-friendly personal portfolio for Sachee Choubey, a Senior Product Manager / Engineering Product Manager. The site is built from resume-backed evidence across Cisco, Eka Software, Wibmo, and MetricStream, with product leadership stories, practical AI-assisted PM workflows, React demos, product notes, and a GitHub project showcase.
 
 ## Stack
 
@@ -43,6 +43,15 @@ npm run build
 
 The production files are created in `dist/`.
 
+## Security checks
+
+```bash
+npm run security:audit
+npm run build
+```
+
+The public site is static and has no database, login, admin panel, contact form, server-side API, or embedded secret. Demo text is processed locally in the visitor's browser and is never uploaded. The site also includes a restrictive Content Security Policy, bounded demo inputs, dependency monitoring, and a least-privilege GitHub Pages workflow pinned to immutable action revisions.
+
 ## Preview the production build
 
 ```bash
@@ -65,6 +74,8 @@ This project is already configured for a GitHub Pages repository named `sachee-p
 3. In GitHub, open Settings -> Pages -> Build and deployment.
 4. Select GitHub Actions as the source.
 5. The workflow in `.github/workflows/deploy.yml` will build and publish the site.
+6. Under Settings -> Pages, enable **Enforce HTTPS**.
+7. Protect the `main` branch with pull requests and required status checks so accidental or unauthorized direct pushes cannot publish.
 
 Expected site URL:
 
@@ -100,3 +111,4 @@ If you choose a different repository name, update `base` in `vite.config.ts` bef
 - The Demo Lab uses mock local logic. It does not call an AI API or send data anywhere.
 - The case studies intentionally avoid confidential company data and competitor-heavy framing.
 - The copy is designed to sound practical and senior without overclaiming.
+- GitHub Pages visitors cannot edit the repository or website. Publishing access remains controlled by GitHub repository permissions, branch protection, account security, and the deployment workflow.
