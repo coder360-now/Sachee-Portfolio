@@ -63,8 +63,8 @@ export const profile = {
   headline: "Enterprise PM for workflow automation, contact center products, compliance-aware launches, and practical AI-assisted product work.",
   shortBio:
     "I have 14 years of experience across Cisco, Eka Software, Wibmo, and MetricStream, with a product path that runs through enterprise SaaS, CCaaS, financial workflows, payments, GRC, analytics, and regulated product design.",
-  githubHandle: "coder-360now",
-  githubUrl: "https://github.com/coder-360now",
+  githubHandle: "coder360-now",
+  githubUrl: "https://github.com/coder360-now",
   linkedInUrl: "https://linkedin.com/in/sacheechoubey",
   emailUrl: "mailto:sachee.office@gmail.com",
   resumeUrl: "#contact",
@@ -393,7 +393,7 @@ export const blogPosts: BlogPost[] = [
 
 export const plannedRepos: PlannedRepo[] = [
   {
-    name: "sachee-product-portfolio",
+    name: "Sachee-Portfolio",
     description: "This portfolio site: resume-backed product story, React demo lab, and public PM writing system.",
     status: "live",
   },

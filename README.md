@@ -67,10 +67,10 @@ npm run preview
 
 ## Deploy on GitHub Pages
 
-This project is already configured for a GitHub Pages repository named `sachee-product-portfolio`.
+This project is already configured for the GitHub Pages repository `coder360-now/Sachee-Portfolio`.
 
-1. Create a new GitHub repository named `sachee-product-portfolio`.
-2. Push this project to the repo's `main` branch.
+1. Use the GitHub repository named `Sachee-Portfolio`.
+2. Push this project to the repository's `main` branch.
 3. In GitHub, open Settings -> Pages -> Build and deployment.
 4. Select GitHub Actions as the source.
 5. The workflow in `.github/workflows/deploy.yml` will build and publish the site.
@@ -80,7 +80,7 @@ This project is already configured for a GitHub Pages repository named `sachee-p
 Expected site URL:
 
 ```text
-https://coder-360now.github.io/sachee-product-portfolio/
+https://coder360-now.github.io/Sachee-Portfolio/
 ```
 
 If you choose a different repository name, update `base` in `vite.config.ts` before building.
