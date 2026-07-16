@@ -19,12 +19,12 @@ const demoIcons: Record<DemoId, typeof SearchCheck> = {
   roadmap: BarChart3,
 };
 
-const samplePrd = `Problem: PMs need a faster way to review early PRD drafts before cross-functional reviews.
+const samplePrd = `Problem: Product managers need a faster way to review early requirement drafts before cross-functional reviews.
 Target users: Product managers and engineering leads preparing for planning.
 Scope: Check clarity, risks, dependencies, success metrics, and launch readiness.
-Success metrics: Faster review cycles and fewer open questions in PRD reviews.
-Risks: Mock logic can miss domain-specific context and should not replace PM judgment.
-Dependencies: Design review, analytics event naming, support readiness, and release notes.`;
+Success metrics: Faster review cycles and fewer open questions in product requirement reviews.
+Risks: Rule-based checks can miss domain-specific context and should not replace product judgment.
+Dependencies: Design review, analytics event naming, sales and marketing training, support readiness, and release notes.`;
 
 function buildPrdReport(text: string) {
   const lower = text.toLowerCase();
@@ -32,7 +32,7 @@ function buildPrdReport(text: string) {
     { label: "Problem clarity", keywords: ["problem", "customer", "user"], suggestion: "State the customer pain and target user more explicitly." },
     { label: "Scope boundaries", keywords: ["scope", "out of scope", "mvp"], suggestion: "Add crisp in-scope and out-of-scope boundaries." },
     { label: "Risks", keywords: ["risk", "constraint", "tradeoff"], suggestion: "List risks, constraints, and review owners." },
-    { label: "Dependencies", keywords: ["dependency", "dependencies", "design", "analytics"], suggestion: "Name engineering, design, analytics, GTM, and support dependencies." },
+    { label: "Dependencies", keywords: ["dependency", "dependencies", "design", "analytics"], suggestion: "Name engineering, design, analytics, sales, marketing, and support dependencies." },
     { label: "Success metrics", keywords: ["metric", "success", "adoption", "conversion"], suggestion: "Define measurable success signals and a review window." },
     { label: "Launch readiness", keywords: ["launch", "beta", "ga", "support", "docs"], suggestion: "Add launch stage, docs, support, enablement, and rollout criteria." },
   ];
@@ -55,14 +55,14 @@ function PrdHealthChecker() {
     <div className="grid gap-5 lg:grid-cols-[0.95fr_1.05fr]">
       <Card className="border-slate-200">
         <CardHeader>
-          <CardTitle>Paste PRD text</CardTitle>
+          <CardTitle>Paste product requirements</CardTitle>
         </CardHeader>
         <CardContent>
           <Textarea
             value={text}
             onChange={(event) => setText(event.target.value)}
             aria-describedby="prd-input-limit"
-            aria-label="PRD text"
+            aria-label="Product requirements text"
             maxLength={12000}
           />
           <p className="mt-2 text-right text-xs text-slate-500" id="prd-input-limit">
@@ -79,7 +79,7 @@ function PrdHealthChecker() {
 
       <Card className="border-slate-200">
         <CardHeader>
-          <CardTitle>Mock analysis</CardTitle>
+          <CardTitle>Requirements review</CardTitle>
           <p className="text-sm text-slate-600">{healthyCount} of {report.length} checks look healthy in this local pass.</p>
         </CardHeader>
         <CardContent className="grid gap-3">
@@ -117,10 +117,10 @@ const feedbackItems = [
   },
   {
     id: "f3",
-    text: "Sales needs a simple way to explain beta limitations without overpromising GA behavior.",
+    text: "Sales needs a simple way to explain beta limitations without overpromising full-launch behavior.",
     theme: "Launch readiness",
     urgency: "Medium",
-    area: "GTM enablement",
+    area: "Sales and marketing training",
     action: "Prepare beta messaging, FAQ, and supported-use-case boundaries.",
   },
   {
@@ -171,7 +171,7 @@ function CustomerSignalTriage() {
 
       <Card className="border-slate-200">
         <CardHeader>
-          <CardTitle>Mock triage result</CardTitle>
+          <CardTitle>Triage result</CardTitle>
           <p className="text-sm text-slate-600">{activeItems.length} selected feedback items grouped into product themes.</p>
         </CardHeader>
         <CardContent className="grid gap-3">
@@ -199,7 +199,7 @@ function CustomerSignalTriage() {
 }
 
 const checklistGroups = [
-  { id: "product", title: "Product", items: ["Scope locked", "Beta or GA criteria defined", "Known limitations documented"] },
+  { id: "product", title: "Product", items: ["Scope locked", "Beta or full-launch criteria defined", "Known limitations documented"] },
   { id: "engineering", title: "Engineering", items: ["Monitoring ready", "Rollback path reviewed", "Critical defects triaged"] },
   { id: "support", title: "Support", items: ["Support playbook drafted", "Escalation path named", "FAQ reviewed"] },
   { id: "sales", title: "Sales", items: ["Positioning approved", "Demo boundaries clear", "Objection handling prepared"] },
@@ -307,7 +307,7 @@ function ContactCenterMapper() {
             ))}
           </Select>
           <p className="mt-4 text-sm leading-6 text-slate-600">
-            The output is a strategy prompt, not a market claim. Replace with validated customer evidence later.
+            These examples demonstrate the workflow. Real product decisions still require customer research and market evidence.
           </p>
         </CardContent>
       </Card>
@@ -339,7 +339,7 @@ type FeatureScore = {
 };
 
 const starterFeatures: FeatureScore[] = [
-  { id: "a", name: "PRD clarity scoring", reach: 250, impact: 3, confidence: 75, effort: 2 },
+  { id: "a", name: "Requirements clarity scoring", reach: 250, impact: 3, confidence: 75, effort: 2 },
   { id: "b", name: "Customer theme clustering", reach: 180, impact: 4, confidence: 65, effort: 3 },
   { id: "c", name: "Launch readiness dashboard", reach: 120, impact: 5, confidence: 70, effort: 4 },
   { id: "d", name: "Industry use-case mapper", reach: 90, impact: 2, confidence: 80, effort: 1.5 },
@@ -373,8 +373,8 @@ function RoadmapPrioritization() {
     <div className="grid gap-5">
       <Card className="border-slate-200">
         <CardHeader>
-          <CardTitle>Mock RICE scoring table</CardTitle>
-          <p className="text-sm text-slate-600">Edit the assumptions and the ranking updates locally.</p>
+          <CardTitle>Prioritization table</CardTitle>
+          <p className="text-sm text-slate-600">Edit reach, impact, confidence, or effort to see the ranking change.</p>
         </CardHeader>
         <CardContent>
           <div className="overflow-x-auto">
@@ -386,7 +386,7 @@ function RoadmapPrioritization() {
                   <th className="px-3 py-3">Impact</th>
                   <th className="px-3 py-3">Confidence %</th>
                   <th className="px-3 py-3">Effort</th>
-                  <th className="px-3 py-3">RICE</th>
+                  <th className="px-3 py-3">Priority score</th>
                 </tr>
               </thead>
               <tbody>
@@ -454,8 +454,8 @@ export function DemoLab() {
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
         <SectionHeading
           eyebrow="Demo lab"
-          title="Small React prototypes for agentic PM app ideas."
-          description="Each card opens a local interactive demo. The logic is intentionally mocked for a static first version, but the workflows are realistic enough to evolve later."
+          title="Working React demos for common product decisions."
+          description="Each demo is interactive and runs entirely in the browser. It shows the intended workflow without using company data or external AI services."
         />
 
         <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-5">
@@ -470,7 +470,7 @@ export function DemoLab() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm leading-6 text-slate-600">{demo.description}</p>
-                  <p className="mt-3 text-sm font-medium text-slate-800">PM problem: {demo.problem}</p>
+                  <p className="mt-3 text-sm font-medium text-slate-800">Problem addressed: {demo.problem}</p>
                   <Button
                     aria-pressed={isActive}
                     className="mt-5 w-full"
@@ -488,7 +488,7 @@ export function DemoLab() {
         <div className="mt-8 rounded-lg border border-slate-200 bg-white p-4 shadow-sm sm:p-6">
           <div className="mb-5 flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
             <div>
-              <Badge tone="success">Open demo</Badge>
+              <Badge tone="success">Interactive demo</Badge>
               <h3 className="mt-3 text-2xl font-semibold text-slate-950">{activeSummary.title}</h3>
               <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-600">{activeSummary.problem}</p>
             </div>

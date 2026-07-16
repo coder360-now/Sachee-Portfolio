@@ -13,9 +13,9 @@ export function GitHubShowcase() {
           <div>
             <SectionHeading
               className="[&_h2]:text-white [&_p]:text-slate-300"
-              eyebrow="GitHub showcase"
+              eyebrow="Projects and pipeline"
               title={`github.com/${profile.githubHandle}`}
-              description="This space hosts hands-on product experiments, React prototypes, and AI-assisted PM tools that make product judgment visible."
+              description="My GitHub shows how I translate product ideas into working React tools. The live portfolio and the next projects are listed here."
             />
             <ActionLink external href={profile.githubUrl} className="mt-6 bg-white text-slate-950 hover:bg-slate-200">
               <Github className="h-4 w-4" aria-hidden="true" />
@@ -29,13 +29,13 @@ export function GitHubShowcase() {
                 <CardHeader>
                   <div className="flex items-start justify-between gap-3">
                     <CardTitle className="text-white">{repo.name}</CardTitle>
-                    <Badge tone={repo.status === "live" ? "success" : repo.status === "planned" ? "neutral" : "medium"}>{repo.status}</Badge>
+                    <Badge tone={repo.status === "Live" ? "success" : repo.status === "In development" ? "medium" : "neutral"}>{repo.status}</Badge>
                   </div>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm leading-6 text-slate-300">{repo.description}</p>
                   <p className="mt-4 text-xs uppercase tracking-normal text-slate-400">
-                    {repo.status === "live" ? "Available in this GitHub portfolio" : "Standalone repository planned"}
+                    {repo.status === "Live" ? "Available now" : repo.status === "In development" ? "Currently being developed" : "Next in the project pipeline"}
                   </p>
                 </CardContent>
               </Card>

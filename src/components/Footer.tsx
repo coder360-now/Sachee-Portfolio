@@ -14,7 +14,7 @@ export function Footer() {
         <div>
           <p className="text-sm font-semibold">{profile.name} Portfolio</p>
           <p className="mt-1 max-w-2xl text-sm leading-6 text-slate-300">
-            Public product work, React prototypes, and practical PM thinking. Built with local mock data and no paid APIs.
+            Senior Product Manager focused on enterprise software, workflow automation, complex launches, and practical AI tools.
           </p>
         </div>
         <div className="flex flex-wrap gap-2">

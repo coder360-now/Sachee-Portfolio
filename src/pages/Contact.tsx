@@ -8,7 +8,7 @@ const contactItems = [
   { label: "LinkedIn", href: profile.linkedInUrl, icon: Linkedin, external: true },
   { label: "GitHub profile", href: profile.githubUrl, icon: Github, external: true },
   { label: "Email", href: profile.emailUrl, icon: Mail },
-  { label: "Resume available on request", href: profile.resumeUrl, icon: Download },
+  { label: "Request my resume", href: profile.resumeUrl, icon: Download },
 ];
 
 export function Contact() {
@@ -18,8 +18,8 @@ export function Contact() {
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <SectionHeading
             eyebrow="Contact"
-            title="A public home for product work, experiments, and PM thinking."
-            description="Use this section for recruiter, hiring-manager, product-leadership, and LinkedIn sharing. The resume PDF is not published until you decide you want that file public."
+            title="Let's discuss product leadership and enterprise software."
+            description="I welcome conversations about senior product roles, product strategy, complex launches, workflow automation, and practical AI applications."
           />
 
           <Card className="border-slate-200 bg-white">
@@ -40,11 +40,11 @@ export function Contact() {
               ))}
               <div className="rounded-md border border-slate-200 bg-slate-50 p-4 sm:col-span-2">
                 <p className="text-sm leading-6 text-slate-600">
-                  This website is meant to share product work, working experiments, and practical PM thinking in a recruiter-friendly and leadership-friendly format without exposing confidential company details.
+                  The experience, case studies, demos, recognition, and writing above provide a clear view of how I lead product work.
                 </p>
                 <div className="mt-4 flex flex-wrap gap-3">
-                  <ActionLink href="#case-studies">View Product Work</ActionLink>
-                  <ActionLink href="#demo-lab" variant="secondary">Explore Demos</ActionLink>
+                  <ActionLink href="#case-studies">View case studies</ActionLink>
+                  <ActionLink href="#demo-lab" variant="secondary">Try the demos</ActionLink>
                 </div>
               </div>
             </CardContent>

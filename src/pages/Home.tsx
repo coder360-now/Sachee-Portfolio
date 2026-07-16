@@ -4,10 +4,10 @@ import { ActionLink } from "../components/ActionLink";
 import { metrics, profile } from "../data/portfolio";
 
 const proofPoints = [
-  "Native outbound campaign product",
-  "Compliance-aware launch decisions",
-  "Enterprise workflow automation",
-  "AI-assisted PM operating system",
+  "14 years in enterprise software",
+  "Launched Native Webex Campaign Manager",
+  "Led regulated product launches",
+  "Built practical AI-assisted tools",
 ];
 
 export function Home() {
@@ -21,22 +21,22 @@ export function Home() {
 
       <div className="relative mx-auto max-w-7xl px-4 pb-10 pt-16 sm:px-6 lg:pb-14 lg:pt-20">
         <div className="max-w-3xl">
-          <p className="text-sm font-semibold uppercase tracking-normal text-teal-200">Sachee Choubey / Enterprise PM</p>
+          <p className="text-sm font-semibold uppercase tracking-normal text-teal-200">Sachee Choubey / Senior Product Manager</p>
           <h1 className="mt-5 max-w-4xl text-4xl font-semibold leading-tight tracking-normal text-white sm:text-5xl lg:text-6xl">
-            Product systems for launches that cannot afford fuzzy thinking.
+            I lead complex enterprise products from customer need to launch and adoption.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-200">{profile.headline}</p>
           <p className="mt-4 max-w-2xl text-base leading-7 text-slate-300">{profile.shortBio}</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <ActionLink href="#case-studies" className="bg-teal-400 text-slate-950 hover:bg-teal-300">
-              View Product Work
+              View case studies
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </ActionLink>
             <ActionLink href="#demo-lab" className="border border-white/20 bg-white/10 text-white hover:bg-white/15">
-              Explore Demos
+              Try interactive demos
             </ActionLink>
             <ActionLink href="#blog" className="border border-white/20 bg-white/10 text-white hover:bg-white/15">
-              Read Blog
+              Read product writing
             </ActionLink>
             <ActionLink external href={profile.githubUrl} className="bg-transparent text-teal-100 hover:bg-white/10">
               <Github className="h-4 w-4" aria-hidden="true" />

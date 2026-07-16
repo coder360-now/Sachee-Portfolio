@@ -7,9 +7,9 @@ export function About() {
     <section id="about" className="scroll-mt-28">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.9fr_1.1fr]">
         <SectionHeading
-          eyebrow="About"
-          title="Product management with technical curiosity and execution depth."
-          description="A realistic view of my PM background, how I work with teams, and why I am building this portfolio publicly."
+          eyebrow="Career and principles"
+          title="Senior product leadership built on enterprise workflow experience."
+          description="My career spans product management, business analysis, implementation, and support across complex enterprise software."
         />
 
         <div className="grid gap-6">
@@ -38,11 +38,11 @@ export function About() {
         <div className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
           <div className="flex flex-col gap-2 border-b border-slate-200 pb-5 md:flex-row md:items-end md:justify-between">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-normal text-teal-700">Career chapters</p>
-              <h3 className="mt-2 text-2xl font-semibold text-slate-950">Enterprise workflow depth before the portfolio demos.</h3>
+              <p className="text-sm font-semibold uppercase tracking-normal text-teal-700">Professional experience</p>
+              <h3 className="mt-2 text-2xl font-semibold text-slate-950">Four companies. One progression toward product leadership.</h3>
             </div>
             <p className="max-w-xl text-sm leading-6 text-slate-600">
-              A compact resume map across contact center, CTRM, payments, GRC, integrations, and automation.
+              Experience across contact centers, commodity trading, financial operations, payments, governance and risk, integrations, and automation.
             </p>
           </div>
 

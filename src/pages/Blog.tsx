@@ -4,7 +4,7 @@ import { SectionHeading } from "../components/SectionHeading";
 import { Badge } from "../components/ui/badge";
 import { Button } from "../components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
-import { blogPosts } from "../data/portfolio";
+import { blogPosts, upcomingBlogPosts } from "../data/portfolio";
 
 export function Blog() {
   const [activeSlug, setActiveSlug] = useState(blogPosts[0]?.slug);
@@ -14,9 +14,9 @@ export function Blog() {
     <section id="blog" className="scroll-mt-28">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
         <SectionHeading
-          eyebrow="Product blog"
-          title="Notes on practical PM work."
-          description="Short field notes on enterprise product decisions, AI-assisted workflows, customer operations, and launch discipline."
+          eyebrow="Product writing"
+          title="How I approach product decisions and execution."
+          description="Published notes on enterprise products, AI-assisted workflows, customer operations, and launch discipline."
         />
 
         <div className="mt-10 grid gap-6 lg:grid-cols-[0.92fr_1.08fr]">
@@ -62,6 +62,31 @@ export function Blog() {
               ))}
             </div>
           </article>
+        </div>
+
+        <div className="mt-12 border-t border-slate-200 pt-10">
+          <div className="max-w-3xl">
+            <Badge tone="neutral">Upcoming writing</Badge>
+            <h3 className="mt-4 text-2xl font-semibold text-slate-950">Topics in the writing pipeline</h3>
+            <p className="mt-3 text-sm leading-6 text-slate-600">
+              The next articles will focus on launch decisions, customer support signals, and enterprise administrator workflows.
+            </p>
+          </div>
+          <div className="mt-6 grid gap-4 lg:grid-cols-3">
+            {upcomingBlogPosts.map((post) => (
+              <Card key={post.title} className="border-slate-200 bg-white">
+                <CardHeader>
+                  <div className="flex items-start justify-between gap-3">
+                    <CardTitle>{post.title}</CardTitle>
+                    <Badge tone={post.status === "Coming next" ? "success" : "neutral"}>{post.status}</Badge>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm leading-6 text-slate-600">{post.summary}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -1,6 +1,6 @@
 # Sachee Choubey Product Portfolio
 
-A public, recruiter-friendly personal portfolio for Sachee Choubey, a Senior Product Manager / Engineering Product Manager. The site is built from resume-backed evidence across Cisco, Eka Software, Wibmo, and MetricStream, with product leadership stories, practical AI-assisted PM workflows, React demos, product notes, and a GitHub project showcase.
+A public professional portfolio for Sachee Choubey, a Senior Product Manager. It presents 14 years of experience across Cisco, Eka Software, Wibmo, and MetricStream, along with product leadership skills, case studies, recognition, interactive React demos, writing, and the GitHub project pipeline.
 
 ## Stack
 
@@ -8,7 +8,7 @@ A public, recruiter-friendly personal portfolio for Sachee Choubey, a Senior Pro
 - Vite
 - TypeScript
 - Tailwind CSS
-- Local mock data only
+- Sample data processed in the browser
 - Static-site friendly for Netlify or GitHub Pages
 
 ## Run locally
@@ -87,7 +87,7 @@ If you choose a different repository name, update `base` in `vite.config.ts` bef
 
 ## Where to edit content
 
-- Profile, nav, about text, capabilities, case studies, demo cards, blog posts, and GitHub repo placeholders: `src/data/portfolio.ts`
+- Profile, navigation, experience, skills, case studies, recognition details, demo cards, blog posts, upcoming writing, and project pipeline: `src/data/portfolio.ts`
 - Homepage layout and hero: `src/pages/Home.tsx`
 - About section: `src/pages/About.tsx`
 - Product leadership cards: `src/pages/Leadership.tsx`
@@ -96,19 +96,19 @@ If you choose a different repository name, update `base` in `vite.config.ts` bef
 - Blog section and article display: `src/pages/Blog.tsx`
 - GitHub showcase: `src/pages/GitHubShowcase.tsx`
 - Contact and career links: `src/pages/Contact.tsx`
+- Rewards and recognition: `src/pages/Recognition.tsx`
 - Shared colors and base styling: `src/index.css`
 - Hero image asset: `src/assets/hero-product-map.png`
 
 ## What to customize first
 
-1. Decide whether the resume PDF should be downloadable publicly. It currently stays out of the published site.
-2. Add more non-confidential detail to the Cisco case study if you want it to read like a full portfolio case study.
-3. Rewrite the blog draft notes into full posts.
-4. Create the planned GitHub repositories when ready, then update their status and links.
+1. Keep project and writing statuses current in `src/data/portfolio.ts`.
+2. Add new case studies, awards, and results as they become available.
+3. Add repository links when each pipeline project becomes public.
 
 ## Notes
 
-- The Demo Lab uses mock local logic. It does not call an AI API or send data anywhere.
+- The Demo Lab uses sample data and browser-based rule logic. It does not call an AI API or send data anywhere.
 - The case studies intentionally avoid confidential company data and competitor-heavy framing.
 - The copy is designed to sound practical and senior without overclaiming.
 - GitHub Pages visitors cannot edit the repository or website. Publishing access remains controlled by GitHub repository permissions, branch protection, account security, and the deployment workflow.

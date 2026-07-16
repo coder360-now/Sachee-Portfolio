@@ -6,6 +6,7 @@ import { DemoLab } from "./pages/DemoLab";
 import { GitHubShowcase } from "./pages/GitHubShowcase";
 import { Home } from "./pages/Home";
 import { Leadership } from "./pages/Leadership";
+import { Recognition } from "./pages/Recognition";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 
@@ -18,6 +19,7 @@ export default function App() {
         <About />
         <Leadership />
         <CaseStudies />
+        <Recognition />
         <DemoLab />
         <Blog />
         <GitHubShowcase />
