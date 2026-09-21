@@ -13,12 +13,16 @@ export type Capability = {
 export type CaseStudy = {
   title: string;
   theme: string;
+  status?: string;
   focusAreas: string[];
   problem: string;
   role: string;
   decisions: string[];
   outcome: string;
   learned: string;
+  timeline?: { label: string; value: string }[];
+  decisionLog?: { decision: string; why: string }[];
+  artifacts?: string[];
 };
 
 export type DemoSummary = {
@@ -77,6 +81,11 @@ export type ExperienceChapter = {
   proof: string[];
 };
 
+export type QuickScanItem = {
+  label: string;
+  detail: string;
+};
+
 export const profile = {
   name: "Sachee Choubey",
   role: "Senior Product Manager",
@@ -102,7 +111,7 @@ export const navItems: LinkItem[] = [
 ];
 
 export const aboutParagraphs = [
-  "I am a Senior Product Manager based in Bengaluru. At Cisco, I lead enterprise contact center and outbound engagement products from discovery and roadmap decisions through launch and adoption.",
+  "I am a Senior Product Manager based in Bengaluru. At Cisco, my work has included enterprise contact center products, digital contact center administration workflows, and outbound engagement capabilities.",
   "My career also includes commodity trading and financial workflows at Eka Software, digital payments and rewards at Wibmo, and governance, risk and compliance products at MetricStream.",
   "I do my best work on complex products where customer needs, regulations, user workflows, engineering choices, and launch commitments must be brought into one clear plan.",
 ];
@@ -128,11 +137,39 @@ export const operatingStyle = [
 
 export const metrics: Metric[] = [
   { value: "14 years", label: "across product management, business analysis, and enterprise software" },
+  { value: "Cisco", label: "digital contact center admin workflow experience" },
   { value: "9 months", label: "from initial concept to launch for Native Webex Campaign Manager" },
   { value: "8-10", label: "customer interviews to narrow launch scope" },
   { value: "60+", label: "paid subscriptions following launch" },
   { value: "20+", label: "active customers in early adoption" },
-  { value: "40%", label: "improvement in support efficiency through automation" },
+];
+
+export const bestFit: QuickScanItem[] = [
+  {
+    label: "Best fit",
+    detail: "Senior PM roles in enterprise SaaS, contact center, workflow automation, platform/admin experiences, and AI-assisted product systems.",
+  },
+  {
+    label: "Cisco product area",
+    detail: "Digital Contact Center administration workflows for enterprise contact center teams.",
+  },
+  {
+    label: "Shipped proof",
+    detail: "Native Webex Campaign Manager from concept to General Availability, with early paid adoption.",
+  },
+  {
+    label: "Operating style",
+    detail: "Customer evidence, explicit tradeoffs, regulated launches, cross-functional execution, and measurable adoption.",
+  },
+];
+
+export const proofArtifacts = [
+  "Sanitized PRD structure",
+  "Launch readiness checklist",
+  "Roadmap decision log",
+  "Customer interview synthesis",
+  "Compliance decision matrix",
+  "Admin workflow map",
 ];
 
 export const experienceChapters: ExperienceChapter[] = [
@@ -140,9 +177,10 @@ export const experienceChapters: ExperienceChapter[] = [
     company: "Cisco",
     role: "Senior Product Manager / Engineering Product Manager",
     period: "Jan 2022 - Present",
-    focus: "Enterprise contact center software, outbound campaign workflows, regulated launches, and support automation.",
+    focus: "Enterprise contact center software, digital channel administration workflows, outbound campaign workflows, regulated launches, and support automation.",
     proof: [
       "Led strategy, roadmap, product requirements, launch planning, and General Availability for Native Webex Campaign Manager.",
+      "Handled digital contact center administration workflows for enterprise contact center teams.",
       "Focused initial roadmap on sales and collections after customer discovery.",
       "Coordinated engineering, architecture, design, legal, marketing, technical support, site reliability, and product leadership.",
     ],
@@ -236,7 +274,7 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     title: "Enterprise product domains",
-    skills: ["Enterprise SaaS", "Contact center software", "Outbound campaigns", "Workflow automation", "Commodity trading and risk", "Payments and rewards", "Governance, risk and compliance", "Financial operations"],
+    skills: ["Enterprise SaaS", "Contact center software", "Digital contact center administration", "Outbound campaigns", "Workflow automation", "Commodity trading and risk", "Payments and rewards", "Governance, risk and compliance", "Financial operations"],
   },
   {
     title: "Technical collaboration",
@@ -256,6 +294,7 @@ export const caseStudies: CaseStudy[] = [
   {
     title: "Native Webex Campaign Manager",
     theme: "Taking an outbound campaign product from the initial idea to enterprise launch.",
+    status: "Launched product story",
     focusAreas: [
       "Product discovery",
       "Compliance-aware decisions",
@@ -277,6 +316,75 @@ export const caseStudies: CaseStudy[] = [
       "Launched in June 2025 after work began in September 2024. Early adoption included 60+ paid subscriptions and 20+ active customers across healthcare, debt collection, and telecommunications.",
     learned:
       "A successful enterprise launch depends on more than features. Customer evidence, regulatory boundaries, administrator usability, clear sales messaging, support, and operations must be ready together.",
+    timeline: [
+      { label: "Sep 2024", value: "Initial product idea and discovery framing" },
+      { label: "Discovery", value: "8-10 customer interviews narrowed launch scope to sales and collections" },
+      { label: "Launch decisions", value: "Dialing modes, contact-list management, compliance scope, and SFTP sequencing" },
+      { label: "Jun 2025", value: "General Availability launch" },
+      { label: "Early adoption", value: "60+ paid subscriptions and 20+ active customers" },
+    ],
+    decisionLog: [
+      {
+        decision: "Start with sales and collections",
+        why: "These were the clearest high-value scenarios from discovery and gave the first release sharper positioning.",
+      },
+      {
+        decision: "Keep Shared Contact Lists in scope",
+        why: "UI-first administrators needed a practical way to reuse lists without relying on technical workarounds.",
+      },
+      {
+        decision: "Defer automated SFTP transfer",
+        why: "Sequencing it later protected launch timing while keeping the roadmap honest about enterprise import needs.",
+      },
+    ],
+    artifacts: ["Customer interview synthesis", "Launch readiness checklist", "Compliance decision notes", "Adoption KPI readout"],
+  },
+  {
+    title: "Digital Contact Center Admin Workflows",
+    theme: "Cisco product area focused on administration workflows for digital contact center channels.",
+    status: "Cisco product area",
+    focusAreas: [
+      "Digital channels",
+      "Admin workflows",
+      "Enterprise contact center",
+      "Configuration experience",
+      "Operational visibility",
+      "Cross-functional execution",
+    ],
+    problem:
+      "Enterprise contact center administrators need clear, reliable ways to configure and manage digital channel experiences without creating operational ambiguity for supervisors, agents, support, and implementation teams.",
+    role:
+      "Handled digital contact center administration workflows, bringing customer workflow understanding, requirements clarity, roadmap thinking, and cross-functional execution discipline to the product area.",
+    decisions: [
+      "Frame digital-channel administration as an end-to-end operating workflow, not only a settings page.",
+      "Clarify the admin jobs around configuration, ownership, permissioning, change readiness, troubleshooting, and operational visibility.",
+      "Use the same launch discipline from outbound campaign work: evidence first, explicit tradeoffs, support readiness, analytics, and adoption feedback.",
+    ],
+    outcome:
+      "Success measures were framed around administrator task completion, configuration quality, support-ticket patterns, rollout readiness, and adoption of digital-channel workflows as the work matures.",
+    learned:
+      "Digital contact center administration reinforces that enterprise adoption depends on admin usability, support visibility, and clear ownership, not only agent-facing channel capabilities.",
+    timeline: [
+      { label: "Product area", value: "Digital contact center administration workflow ownership" },
+      { label: "Discovery lens", value: "Admin setup, channel configuration, operational handoffs, and support visibility" },
+      { label: "Product lens", value: "Make digital-channel experiences easier to configure, explain, support, and measure" },
+      { label: "Next proof", value: "Add shipped outcomes and metrics as the product work matures" },
+    ],
+    decisionLog: [
+      {
+        decision: "Show the work as product ownership",
+        why: "The story is accurate about the Cisco product area while reserving shipped metrics for completed outcomes.",
+      },
+      {
+        decision: "Center the story on administrator workflows",
+        why: "Administrator usability is often what determines whether enterprise contact center capabilities are adopted well.",
+      },
+      {
+        decision: "Define proof before the outcomes mature",
+        why: "Task completion, configuration quality, support patterns, and rollout readiness give the work measurable direction from the start.",
+      },
+    ],
+    artifacts: ["Admin workflow map", "Configuration journey", "Readiness checklist", "Success-metric plan"],
   },
   {
     title: "Support and Product Workflow Automation",
